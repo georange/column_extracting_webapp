@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Georgia's Spreadsheet Parser</title>
+</head>
+<body>
+	<form action="SpreadsheetParser" method="post" enctype="multipart/form-data">
+		Spreadsheet to parse: <br />
+		<p />
+		<input type="file" name="file" /> <br />
+		<p />
+		Columns Wanted: <input type="text" name="columns" /> <br /> 
+		Output Format: <select name="outputFormat">
+			<option value="csv">CSV</option>
+			<option value="xml">XML</option>
+			<option value="xls">XLS</option>
+			<option value="ods">ODS</option>
+			<option value="xini">XINI</option>
+			<option value="xlsx">XLSX</option>
+		</select> <br /> 
+		Quotes: 
+		<input type="radio" name="quotes" value="true" />True 
+		<input type="radio" name="quotes" value="false" />False
+		<p />
+		<input type="submit" value="Submit" />
+	</form>
+	<br />
+	<br />
+	This process:
+	<br />
+	<ul>
+		<li>removes fully empty lines</li>
+		<li>allows for the option of preserving quotes found in input (except for the first column of CSV files..)</li>
+		<li>will not consider columns or quote options when converting from XML to XINI</li>
+	</ul>
+
+</body>
+</html>
+
